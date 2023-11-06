@@ -22,6 +22,7 @@ l = len(content)
 print(params)
 content = list(map(float, content))
 f = open('dec.txt', 'w')
+#Decrypting each letter step by step
 for i in range(0, l, 7):
     input_tensor = tf.convert_to_tensor(content[i:i+7], dtype=tf.float32)
     input_tensor = tf.reshape(input_tensor, (7,))
