@@ -11,11 +11,16 @@ tf.random.set_seed(42)
 random.seed(0)
 np.random.seed(0)
 
-def alph_to_bin(al):
-    ch = bin(al)[2:]
-    ch = list(ch)
-    ch = list(map(int, ch))
-    return ch
+#
+def alph_to_bin(al:int):
+    b = bin(al)
+    b = b[2:]
+    l = len(b)
+    if l<7:
+        b = '0'*(7-l) + b
+    b = list(b)
+    b = list(map(int, b))
+    return b
 
 new_model = tf.keras.models.load_model('enc_model.keras')
 
